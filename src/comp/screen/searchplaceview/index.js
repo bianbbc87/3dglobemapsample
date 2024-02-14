@@ -681,20 +681,6 @@ const SearchPlaceView = (props) => {
 				direction={"column"}
 				visibility={state?.isAppLoaded ? "visible" : "hidden"}
 			>
-				<NavBarView />
-				<Flex
-					flex={1}
-					flexDirection={"row"}
-				>
-					<Flex
-						flex={1}
-						pointerEvents={"auto"}
-						pt={3}
-						ps={3}
-						pe={3}
-						flexDirection={"column"}
-						bg={"#000"}
-					>
 						<Box
 							borderRadius={"5px"}
 							overflow={"hidden"}
@@ -702,23 +688,12 @@ const SearchPlaceView = (props) => {
 						>
 							{renderSearchResultList()}
 						</Box>
-						<Flex>
-							<PlaceInfoView
-								isPlaceVisible={userConfig?.isPlaceVisible}
-								selectedPlaceCoordinate={
-									userConfig?.selectedPlaceCoordinate
-								}
-								placeItem={state?.placeItem}
-							/>
-						</Flex>
-					</Flex>
 					<Flex
 						flex={2}
 						overflow={"visible"}
 					>
 						{state?.isAppLoaded && <MasterGlobeView />}
 					</Flex>
-				</Flex>
 			</Flex>
 		);
 	};

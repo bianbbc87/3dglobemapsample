@@ -1,5 +1,3 @@
-import "./App.css";
-
 import React, { useEffect, useState, createRef } from "react";
 
 import { Text, Flex, CircularProgress, useColorMode } from "@chakra-ui/react";
@@ -27,14 +25,6 @@ const App = (props) => {
 	useEffect(() => {
 		props.setIsMasterAppLoading(true);
 	}, []);
-
-	/*  Public Interface Methods */
-
-	/*  Validation Methods  */
-
-	/*  UI Events Methods   */
-
-	/*  Custom-Component sub-render Methods */
 
 	const renderLoader = () => {
 		return (
@@ -96,11 +86,11 @@ const App = (props) => {
 	return (
 		<>
 			<MasterContainer />
-			{isMasterAppLoading && !lodash.isNil(colorMode) && renderLoader()}
 		</>
 	);
 };
 
+// {isMasterAppLoading && !lodash.isNil(colorMode) && renderLoader()}
 const mapStateToProps = (state) => {
 	return {
 		userConfig: state.userConfig,
