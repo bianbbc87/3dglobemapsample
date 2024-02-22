@@ -564,7 +564,7 @@ const SearchPlaceView = (props) => {
 						size="md"
 						mt="10" // 입력 상자 위쪽 마진 설정
 						ml="10" // 입력 상자 왼쪽 마진 설정
-						mr="0" // 입력 상자 오른쪽 마진 설정
+						mr="10" // 입력 상자 오른쪽 마진 설정
 						mb="0" // 입력 상자 아래쪽 마진 설정
 						borderRadius="50"
 					>
