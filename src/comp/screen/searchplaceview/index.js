@@ -557,8 +557,8 @@ const SearchPlaceView = (props) => {
 						</Flex>
 					}
 				>
+					<div style={{ width: '90%', alignItem: 'center'}}> 
 					<InputGroup
-					width="90%"
 					 sx={{ boxSizing: 'border-box' }}
 						bg={"chakra-body-bg"}
 						size="md"
@@ -581,7 +581,6 @@ const SearchPlaceView = (props) => {
 						/>
 						<AutoCompleteInput
 						sx={{ boxSizing: 'border-box' }}
-						width="100%"
 							variant="filled"
 							placeholder="Enter place name to search"
 							value={searchKeyword}
@@ -611,6 +610,7 @@ const SearchPlaceView = (props) => {
 							}
 						/>
 					</InputGroup>
+					</div>
 					<AutoCompleteList
 					 sx={{ boxSizing: 'border-box' }}
 						paddingY={3}
