@@ -39,6 +39,7 @@ import Constants from "../../utils/Constants";
 import AppManager from "../../utils/AppManager";
 
 import MasterWorldArray from "../../data/info/countries+states+cities.json";
+import { color } from "d3";
 
 const { MasterDrawerMenuType, PlaceType, AppNotifKey } = Constants;
 
@@ -527,7 +528,7 @@ const SearchPlaceView = (props) => {
 		return (
 			<Flex
 				flex={1}
-				bg={"chakra-body-bg"}
+				bg={"#000000"}
 			>
 				<AutoComplete
 					onSelectOption={(params) => {
@@ -557,12 +558,18 @@ const SearchPlaceView = (props) => {
 					}
 				>
 					<InputGroup
+					 sx={{ boxSizing: 'border-box' }}
 						bg={"chakra-body-bg"}
 						size="md"
+						mt="10" // 입력 상자 위쪽 마진 설정
+						ml="10" // 입력 상자 왼쪽 마진 설정
+						mr="10" // 입력 상자 오른쪽 마진 설정
+						mb="0" // 입력 상자 아래쪽 마진 설정
+						borderRadius="50"
 					>
 						<InputLeftElement
 							pointerEvents="none"
-							color="gray.300"
+							color="#D7A859"
 							fontSize="1.2em"
 							children={
 								<Icon
@@ -576,6 +583,11 @@ const SearchPlaceView = (props) => {
 							placeholder="Enter place name to search"
 							value={searchKeyword}
 							onChange={handleChange}
+							color={'#000000'}
+							backgroundColor={'#7F6B48'}
+							_hover={{ bg: "#FFD691" }}
+							_focus={{ bg: "#FFD691" }}
+					
 						/>
 						<InputRightElement
 							children={
@@ -596,8 +608,15 @@ const SearchPlaceView = (props) => {
 						/>
 					</InputGroup>
 					<AutoCompleteList
+					 sx={{ boxSizing: 'border-box' }}
 						paddingY={3}
 						marginTop={"2px"}
+						bg="#FFD691"
+						color="#000000"
+						mt="0" // 입력 상자 위쪽 마진 설정
+						ml="10" // 입력 상자 왼쪽 마진 설정
+						mr="10" // 입력 상자 오른쪽 마진 설정
+						mb="0" // 입력 상자 아래쪽 마진 설정
 					>
 						{(state?.searchResultArray ?? []).map((item, index) => {
 							let favPlaceArray = userPref?.favPlaceArray ?? [];
@@ -623,6 +642,9 @@ const SearchPlaceView = (props) => {
 									key={`option-${index}`}
 									getValue={(item) => item?.address}
 									value={item}
+									_backgroundColor="#FFD691" // 드롭다운 항목 배경색 변경을 위한 주석
+									_color="#000000" // 드롭다운 항목 텍스트 색상 변경을 위한 주석
+									_hover="##7F6B48"
 								>
 									<Flex
 										flexDirection={"column"}
